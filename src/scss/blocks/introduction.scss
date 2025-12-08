@@ -1,14 +1,11 @@
 .introduction {
-    height: calc(100vh);
-    min-height: 600px;
+
     background-color: #f8f9fa;
 
     &__wrapper {
         display: flex;
-        height: 100vh;
+        height: calc(100vh);
         min-height: 600px;
-        // flex-wrap: wrap;
-        // justify-content: space-between;
     }
 
     &__text {
@@ -22,7 +19,7 @@
             }
         }
 
-        div {
+        p {
             color: #999999;
             font-size: 19px;
             line-height: 1.5;
@@ -30,31 +27,81 @@
         }
     }
 
-    &__img {
+    &__dog {
         align-self: end;
         width: 40%;
 
-    }
-
-    &__item {
-        width: 100%;
-
-
-        &-img {
-            min-height: 657px;
+        &-box {
+            height: 657px;
         }
 
+        &-img {
+            height: 100%;
+        }
+
+
     }
+
+
 }
 
 
 @media screen and (max-width: 1200px) {
     .introduction {
-        &__item {
+        &__dog {
+            &-box {
+                height: 557px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .introduction {
+
+        &__text {
+            width: 50%;
+        }
+
+        &__dog {
+            width: 50%;
+
             &-img {
                 min-height: auto;
             }
 
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .introduction {
+        &__wrapper {
+            flex-wrap: wrap;
+            // padding-top: 67px;
+
+        }
+
+        &__text {
+            width: 100%;
+
+            &-wrapper {
+                span {
+                    display: inline-block;
+                }
+
+                p {
+                    text-align: center;
+                }
+            }
+        }
+
+        &__dog {
+            width: 100%;
+
+            &-img {
+                margin: 0 auto;
+            }
         }
     }
 }

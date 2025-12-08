@@ -2,7 +2,9 @@
 @use './base/basic.scss';
 
 @use './ui/title.scss';
+@use './ui/animation.scss';
 
 @use './blocks/header.scss';
 @use './blocks/sidebar.scss';
-@use './blocks/introduction.scss'
+@use './blocks/introduction.scss';
+@use './blocks/welcome.scss';

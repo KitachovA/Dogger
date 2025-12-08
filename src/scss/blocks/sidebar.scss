@@ -11,7 +11,7 @@
     padding-top: 20px;
 
     &-active {
-        right: 0; // показуємо меню
+        right: 0;
     }
 
     &__nav {
@@ -25,6 +25,16 @@
 
         .has-children {
             position: relative;
+
+            .active {
+                opacity: 1;
+                visibility: visible;
+
+                transition:
+                    max-height 0.4s ease,
+                    opacity 0.2s ease,
+                    visibility 0s;
+            }
         }
 
         li {
@@ -46,9 +56,11 @@
         color: rgb(162, 192, 190);
     }
 
-    .collaplse {
+    .collapse {
+        max-height: 0;
+        opacity: 0;
         padding: 0;
-        margin: 0;
+        transition: all 0.4s ease-out;
 
         li>.sidebar__link {
             padding-left: 40px;
@@ -58,7 +70,15 @@
 
     }
 
-    .collaplse>li>.collaplse>li {
+
+    .collapse>li>.collapse {
+        max-height: 0;
+
+        &.active {
+            opacity: 1;
+            transition: all 0.4s ease-out;
+        }
+
         .sidebar__link {
             padding-left: 60px;
         }
@@ -86,6 +106,20 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) rotate(-180deg);
+        transition: .3s all ease;
+
+    }
+
+    .arrow-collapse.active::before {
+        content: '\f106';
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+        font-size: 12px;
+        z-index: 20;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(0deg);
         transition: .3s all ease;
 
     }

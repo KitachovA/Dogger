@@ -1,8 +1,10 @@
 import './scss/main.scss'
 
-import hello from "./js/test";
+import animate from './js/animate'
+import interactive from './js/interactive'
 
+window.addEventListener('DOMContentLoaded', () => {
+    animate()
+    interactive()
+})
 
-hello()
-
-console.log('test')

@@ -1,12 +1,33 @@
 .title {
-    font-size: 4rem;
+    font-size: 62px;
     color: #000;
     font-weight: 900;
     text-transform: uppercase;
 }
 
+.title_h2 {
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 122%;
+    text-align: center;
+
+}
+
+.title_h3 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 120%;
+}
+
+
 @media screen and (max-width: 992px) {
     .title {
         font-size: 32px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        text-align: center;
     }
 }
