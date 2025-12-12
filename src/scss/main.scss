@@ -3,8 +3,15 @@
 
 @use './ui/title.scss';
 @use './ui/animation.scss';
+@use './ui/paw.scss';
+
 
 @use './blocks/header.scss';
 @use './blocks/sidebar.scss';
 @use './blocks/introduction.scss';
 @use './blocks/welcome.scss';
+@use './blocks/about.scss';
+@use './blocks/overlay.scss';
+@use './blocks/trainers.scss';
+@use './blocks/pricing.scss';
+@use './blocks/faq.scss';

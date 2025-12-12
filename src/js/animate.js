@@ -1,43 +1,63 @@
 export default function animate() {
-    const animationElements = document.querySelectorAll('.animation-on-welcome');
-    const fadeLeftElement = document.querySelectorAll(".fade-left");
-    const fadeRightElement = document.querySelectorAll(".fade-right")
-    const wrapper = document.querySelector('.sticky-wrapper');
-    const header = document.querySelector('.header')
 
 
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target)
+    const welcomeElements = document.querySelectorAll('.welcome__intro'),
+        fadeLeftElement = document.querySelectorAll(".left-fade"),
+        fadeRightElement = document.querySelectorAll(".right-fade "),
+        aboutSection = document.querySelectorAll(".about"),
+        trainersBox = document.querySelectorAll(".trainers__item"),
+        pricingFade = document.querySelectorAll(".pricing__fade"),
+        pricingBox = document.querySelectorAll(".pricing__box"),
+        wrapper = document.querySelector('.sticky-wrapper'),
+        header = document.querySelector('.header');
+
+
+    const groups = [
+        welcomeElements,
+        fadeLeftElement,
+        fadeRightElement,
+        aboutSection,
+        trainersBox,
+        pricingFade,
+        pricingBox
+    ];
+    let scrolling = false
+
+    function checkElement(elements) {
+        elements.forEach(element => {
+            const position = element.getBoundingClientRect();
+
+            if (position.top <= window.innerHeight && position.bottom >= 0) {
+                element.classList.add('animate');
             }
-        })
 
-    }, {
-        threshold: 0.1
-    })
+            if (position.top >= window.innerHeight) {
+                element.classList.remove('animate');
+            }
 
+        });
+    }
 
-    animationElements.forEach(elem => {
-        observer.observe(elem)
-    })
+    function handleScroll() {
+        groups.forEach(group => checkElement(group));
 
-    fadeLeftElement.forEach(elem => {
-        observer.observe(elem)
-    })
-    fadeRightElement.forEach(elem => {
-        observer.observe(elem)
-    })
+        const scrolled = window.scrollY > 50;
 
+        wrapper.style.position = scrolled ? 'fixed' : 'absolute';
+        header.style.backgroundColor = scrolled ? 'white' : '#f8f9fa';
+        header.style.boxShadow = scrolled ? '4px 0 20px -5px rgba(0, 0, 0, 0.1)' : 'none';
+    }
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            wrapper.style.position = 'fixed';
-            header.style.backgroundColor = 'white'
-        } else {
-            wrapper.style.position = 'absolute'
-            header.style.backgroundColor = '#f8f9fa'
+        if (!scrolling) {
+            scrolling = true;
+
+            requestAnimationFrame(() => {
+                handleScroll();
+                scrolling = false;
+            });
         }
     });
+
+    handleScroll();
 }

@@ -65,7 +65,14 @@ body {
 
 @media screen and (max-width: 768px) {
     .container {
-        max-width: 540px;
+        max-width: 420px;
         padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        max-width: 320px;
+        // padding: 0 10px;
     }
 }

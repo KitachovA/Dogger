@@ -1,56 +1,17 @@
 .welcome {
     padding: 82px 0 128px 0;
 
-    &__paw {
+
+    &__paragraph {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 170%;
+        text-align: center;
+        color: #808080;
+        max-width: 500px;
         margin: 0 auto;
-        position: relative;
-        width: 32px;
-        height: 32px;
-
-        span:before {
-            content: "\";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            font-size: 32px;
-            color: #A2C0BE;
-        }
-
-        &-paragraph {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 170%;
-            text-align: center;
-            color: #808080;
-            max-width: 500px;
-            margin: 0 auto;
-        }
     }
 
-    &__paw::before {
-        content: "\f1b0";
-        font-family: "Font Awesome 6 Free";
-        font-size: 16px;
-        font-weight: 900;
-        opacity: 0.3;
-        left: -30px;
-        transform: rotate(-45deg);
-        position: absolute;
-        color: #A2C0BE;
-        bottom: 0;
-    }
-
-    &__paw::after {
-        content: "\f1b0";
-        font-family: "Font Awesome 6 Free";
-        font-size: 16px;
-        font-weight: 900;
-        opacity: 0.3;
-        right: -30px;
-        transform: rotate(45deg);
-        position: absolute;
-        color: #A2C0BE;
-        bottom: 0;
-    }
 
     &__title {
         margin-top: 25px;
@@ -119,8 +80,6 @@
                 bottom: 10px;
                 left: 10px;
                 background: #a2c0be;
-                -webkit-transition: .3s all ease-in-out;
-                -o-transition: .3s all ease-in-out;
                 transition: .3s all ease-in-out;
             }
 
@@ -149,6 +108,8 @@
 
 @media screen and (max-width: 992px) {
     .welcome {
+        padding-bottom: 40px;
+
         &__grid {
             flex-direction: column;
 

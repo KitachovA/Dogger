@@ -1,0 +1,134 @@
+.faq {
+    padding: 40px 0;
+
+    &__title {
+        margin-top: 23px;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        margin: 0 auto;
+        margin-top: 8px;
+        text-align: center;
+        width: 50%;
+        display: block;
+        line-height: 170%;
+
+    }
+
+    &__container {
+        display: flex;
+        margin-top: 48px;
+
+    }
+
+    &__collapse {
+        padding: 0 15px;
+        width: 50%;
+        margin-right: 95px;
+        position: relative;
+
+        &-question {
+            padding: 10px 0;
+            position: relative;
+            padding-left: 45px;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 120%;
+            color: #000;
+            // position: relative;
+
+
+            span.active {
+                display: block;
+                position: absolute;
+                border: 1px solid #a2c0be;
+                border-radius: 15px;
+                background-color: #a2c0be;
+                width: 30px;
+                height: 30px;
+                top: 7px;
+                left: 0;
+                transition: .3s all ease;
+            }
+
+            span.active::before {
+                content: '\f1b0';
+                position: absolute;
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 16px;
+                color: #fff;
+
+            }
+
+
+            span.negative {
+                display: block;
+                position: absolute;
+                border: 1px solid #a2c0be;
+                border-radius: 15px;
+                background-color: #fff;
+                width: 30px;
+                height: 30px;
+                top: 7px;
+                left: 0;
+            }
+
+            span.negative::before {
+                content: '\f1b0';
+                position: absolute;
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 16px;
+                color: #ccc;
+                transition: .3s all ease;
+            }
+        }
+
+
+        &-answer {
+            max-height: 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+
+            p {
+                margin-bottom: 10px;
+            }
+
+        }
+
+        &-text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 170%;
+            color: #808080;
+            padding: 10px 0 10px 45px;
+        }
+
+        &-answer.show {
+            visibility: visible;
+            opacity: 1;
+
+        }
+
+    }
+
+    &__photo {
+        padding: 0 15px;
+        width: 50%;
+        height: 360px;
+
+        &-img {
+            // height: 360px;
+            height: 100%;
+        }
+    }
+}
