@@ -5,14 +5,14 @@ export default function collapse() {
 
 
     function showAnswer(i = 0) {
-        answers[i].style.maxHeight = answers[i].scrollHeight + 20 + "px";
+        // answers[i].style.maxHeight = answers[i].scrollHeight + 20 + "px";
         answers[i].classList.add('show')
         questionPaw[i].classList.add('active')
         questionPaw[i].classList.remove('negative')
     }
 
     function closeAnswer(i = 0) {
-        answers[i].style.maxHeight = '0px'
+        // answers[i].style.maxHeight = '0px'
         answers[i].classList.remove('show');
 
         questionPaw[i].classList.remove('active');

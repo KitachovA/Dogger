@@ -143,7 +143,16 @@
 @media screen and (max-width: 768px) {
     .pricing {
         &__box {
-            width: 400px;
+            // width: 400px;
+            width: 287px;
+        }
+
+        &__container {
+            justify-content: center;
+        }
+
+        &__box {
+            width: 369px;
         }
     }
 }

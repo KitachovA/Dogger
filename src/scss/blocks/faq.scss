@@ -49,7 +49,7 @@
                 height: 30px;
                 top: 7px;
                 left: 0;
-                transition: .3s all ease;
+                transition: .5s all ease;
             }
 
             span.active::before {
@@ -76,6 +76,7 @@
                 height: 30px;
                 top: 7px;
                 left: 0;
+                transition: .5s all ease;
             }
 
             span.negative::before {
@@ -88,34 +89,31 @@
                 transform: translate(-50%, -50%);
                 font-size: 16px;
                 color: #ccc;
-                transition: .3s all ease;
+
             }
         }
 
 
         &-answer {
+            padding: 0 1rem;
             max-height: 0;
-            visibility: hidden;
-            opacity: 0;
-            transition: max-height 0.5s ease, opacity 0.5s ease;
+            padding-left: 45px;
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
 
             p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 170%;
+                color: #808080;
+                padding: 10px 0;
                 margin-bottom: 10px;
             }
 
         }
 
-        &-text {
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 170%;
-            color: #808080;
-            padding: 10px 0 10px 45px;
-        }
-
         &-answer.show {
-            visibility: visible;
-            opacity: 1;
+            max-height: 156px;
 
         }
 
@@ -127,8 +125,54 @@
         height: 360px;
 
         &-img {
-            // height: 360px;
+            object-fit: cover;
             height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .faq {
+        &__container {
+            flex-direction: column-reverse;
+
+        }
+
+        &__collapse {
+            width: 100%;
+            margin-right: 0px;
+            margin-top: 30px;
+
+            &-answer.show {
+                max-height: 250px;
+
+            }
+        }
+
+        &__photo {
+            height: 460px;
+            width: 100%;
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .faq {
+        &__container {
+            flex-direction: column-reverse;
+
+        }
+
+        &__collapse {
+            width: 100%;
+
+            margin-right: 0px;
+
+        }
+
+        &__photo {
+            width: 100%;
         }
     }
 }

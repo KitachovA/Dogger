@@ -29,4 +29,5 @@ yarn-error.log*
 
 # Temp files
 *.tmp
-*.swp
+*.swp.github/copilot-instructions.md
+.github/

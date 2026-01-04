@@ -21,6 +21,7 @@
         display: flex;
         margin-top: 48px;
         flex-wrap: wrap;
+        overflow: hidden;
 
 
         &-service {
@@ -159,4 +160,20 @@
         order: 5;
     }
 
+}
+
+@media screen and (max-width: 768px) {
+    .welcome {
+        &__grid {
+            overflow-x: hidden;
+
+            &-service {
+
+                padding: 0 10px;
+                margin: 20px 0;
+            }
+
+
+        }
+    }
 }
